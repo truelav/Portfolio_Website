@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Akira Expanded";
+    src: local("Akira Expanded"),
+        url("../assets/fonts/Akira-Expanded-Demo.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Segoe Pro";
+    src: local("Segoe Pro"),
+        url("../assets/fonts/segoepr.ttf") format("truetype");
+}
+
+img {
+    width: 100%;
+}
+
+.header_font {
+    font-family: "Akira Expanded", sans-serif;
+}
+
+.body_font {
+    font-family: "Segoe Pro", sans-serif;
+}
+
+.wrapper_container {
+    background-image: url("src/assets/images/background/background_paper.jpg");
+    background-size: contain;
+    background-repeat: repeat-y;
+    overflow-x: hidden;
+}
+
+.scene_wrapper {
+    position: relative;
+}
+
+.scene {
+    height: 125vh;
+    background-size: cover;
+    background-position: center center;
+}
+
+.scene_1 {
+    background-image: url("src/assets/images/background/scene_1_bg.png");
+}
+
+.scene_2 {
+    background-image: url("src/assets/images/background/scene_2_bg.png");
+}
+
+.scene_3 {
+    background-image: url("src/assets/images/background/scene_3_bg.png");
+}
+
+.scene_4 {
+    background-image: url("src/assets/images/background/scene_4_bg.png");
+}
+
+.scene_5 {
+    background-image: url("src/assets/images/background/scene_5_bg.png");
+}

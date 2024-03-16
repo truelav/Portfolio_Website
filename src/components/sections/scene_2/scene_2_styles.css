@@ -1,0 +1,7 @@
+.scene_2_text_container {
+    max-width: 40vw;
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    text-align: right;
+}
