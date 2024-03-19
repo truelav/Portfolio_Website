@@ -12,55 +12,30 @@ import Scene_5 from "../components/sections/scene_5/scene_5";
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 const App = () => {
-    const sectionRefs = useRef([]);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const scrollPosition = window.scrollY;
-            const windowHeight = window.innerHeight;
-
-            const sectionIndex = Math.floor(scrollPosition / windowHeight);
-            scrollToSection(sectionIndex);
-        };
-
-        window.addEventListener("scroll", handleScroll);
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
-    const scrollToSection = (index) => {
-        sectionRefs.current[index].scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-        });
-    };
-
     return (
         <>
             <div className="wrapper_container">
-                <section ref={(el) => (sectionRefs.current[0] = el)}>
+                <section>
                     <div className="scene_wrapper">
                         <Scene_1 />
                     </div>
                 </section>
-                <section ref={(el) => (sectionRefs.current[1] = el)}>
+                <section>
                     <div className="scene_wrapper">
                         <Scene_2 />
                     </div>
                 </section>
-                <section ref={(el) => (sectionRefs.current[2] = el)}>
+                <section>
                     <div className="scene_wrapper">
                         <Scene_3 />
                     </div>
                 </section>
-                <section ref={(el) => (sectionRefs.current[3] = el)}>
+                <section>
                     <div className="scene_wrapper">
                         <Scene_4 />
                     </div>
                 </section>
-                <section ref={(el) => (sectionRefs.current[4] = el)}>
+                <section>
                     <div className="scene_wrapper">
                         <Scene_5 />
                     </div>

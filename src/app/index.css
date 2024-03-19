@@ -44,10 +44,6 @@ img {
     scroll-snap-type: y mandatory;
 }
 
-/* .scene_1 {
-    background-image: url("src/assets/images/background/scene_1_bg.png");
-} */
-
 .scene_2 {
     background-image: url("src/assets/images/background/scene_2_bg.png");
 }

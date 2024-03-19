@@ -1,10 +1,25 @@
 .scene_1_text_container {
     position: absolute;
-    top: 20%;
+    top: 10%;
     left: 20%;
     z-index: 999;
 }
 
 .scene_1_images_container {
     padding-top: 10%;
+}
+
+.image-letter-span {
+    display: inline-block;
+    width: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.image-letter {
+    width: 100px;
+}
+
+#portfolio {
+    display: flex;
 }
