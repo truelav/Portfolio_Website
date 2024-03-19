@@ -5,3 +5,23 @@
     right: 10%;
     text-align: right;
 }
+
+.scene_2 {
+}
+
+.scene_2_images_container {
+    position: relative;
+}
+
+#scene_2_blob,
+#scene_2_can,
+#scene_2_red_dot,
+#scene_2_floppy,
+#scene_2_keyboard,
+#scene_2_monitor,
+#scene_2_painter,
+#scene_2_myself {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

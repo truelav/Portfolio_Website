@@ -65,6 +65,15 @@ export default function Scene_1() {
             repeat: -1,
             yoyo: true,
         });
+        gsap.to("#creation_painting", {
+            x: 75,
+            y: 20,
+            delay: 1.6,
+            duration: 1.3,
+            ease: "power4.out",
+            repeat: -1,
+            yoyo: true,
+        });
     }, []);
 
     return (
