@@ -2,7 +2,6 @@ import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger, ScrollToPlugin } from "gsap/all";
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 import {
     blob,
@@ -14,100 +13,27 @@ import {
     painter,
     red_dot,
 } from "../../../assets/index";
-
+import { image_animations } from "./scene_2_animations";
 import "./scene_2_styles.css";
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 export default function Scene_2() {
     const scene_2_ref = useRef(null);
-    const scene_2_tl = gsap.timeline();
-    const tl_options = {
-        root: null, // viewport
-        rootMargin: "0px", // no margin
-        threshold: 0.5, // trigger when 50% of section is visible
-    };
+    const scene_2_tl = gsap.timeline({
+        scrollTrigger: ".scene_2_images_container",
+    });
 
     useGSAP(() => {
-        gsap.from("#scene_2_blob", {
-            opacity: 0,
-            duration: 0.5,
-            ease: "power4.out",
-            scrollTrigger: {
-                trigger: ".scene_2_images_container",
-                start: "mid mid",
-            },
+        const scene_2_images = gsap.utils.toArray(".scene_2_image");
+        scene_2_images.forEach((scene_image, idx) => {
+            const image_animation = image_animations[idx];
+            gsap.from(`#${scene_image.id}`, image_animation);
+            console.log(scene_image.id);
         });
-        gsap.from("#scene_2_painter", {
-            y: 1000,
-            delay: 0.3,
-            duration: 0.6,
-            ease: "power4.out",
-            scrollTrigger: {
-                trigger: ".scene_2_images_container",
-                start: "mid mid",
-            },
-        });
-        gsap.from("#scene_2_red_dot", {
-            x: -1000,
-            delay: 0.4,
-            duration: 0.7,
-            ease: "power4.out",
-            scrollTrigger: {
-                trigger: ".scene_2_images_container",
-                start: "mid mid",
-            },
-        });
-        gsap.from("#scene_2_floppy", {
-            x: 500,
-            y: -700,
-            delay: 0.6,
-            duration: 0.8,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: ".scene_2_images_container",
-                start: "mid mid",
-            },
-        });
-        gsap.from("#scene_2_monitor", {
-            x: 1000,
-            delay: 0.6,
-            duration: 0.8,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: ".scene_2_images_container",
-                start: "mid mid",
-            },
-        });
-        gsap.from("#scene_2_keyboard", {
-            x: 1000,
-            delay: 0.9,
-            duration: 0.8,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: ".scene_2_images_container",
-                start: "mid mid",
-            },
-        });
-        gsap.from("#scene_2_can", {
-            y: 1000,
-            delay: 1.4,
-            duration: 0.7,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: ".scene_2_images_container",
-                start: "mid mid",
-            },
-        });
-        gsap.from("#scene_2_myself", {
-            opacity: 0,
-            delay: 2,
-            duration: 0.7,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: ".scene_2_images_container",
-                start: "mid mid",
-            },
-        });
+        console.log(scene_2_images);
     }, []);
+
     return (
         <div className="scene scene_2 grid grid-cols-2">
             <div className="scene_2_text_container" ref={scene_2_ref}>
@@ -146,6 +72,7 @@ export default function Scene_2() {
                         src={blob}
                         alt="creation of adam painting"
                         id="scene_2_blob"
+                        className="scene_2_image"
                     />
                 </div>
                 <div className="scene_2_image_container">
@@ -153,6 +80,7 @@ export default function Scene_2() {
                         src={red_dot}
                         alt="creation of adam painting"
                         id="scene_2_red_dot"
+                        className="scene_2_image"
                     />
                 </div>
                 <div className="scene_2_image_container">
@@ -160,6 +88,7 @@ export default function Scene_2() {
                         src={floppy}
                         alt="creation of adam painting"
                         id="scene_2_floppy"
+                        className="scene_2_image"
                     />
                 </div>
 
@@ -168,6 +97,7 @@ export default function Scene_2() {
                         src={monitor}
                         alt="creation of adam painting"
                         id="scene_2_monitor"
+                        className="scene_2_image"
                     />
                 </div>
                 <div className="scene_2_image_container">
@@ -175,6 +105,7 @@ export default function Scene_2() {
                         src={keyboard}
                         alt="creation of adam painting"
                         id="scene_2_keyboard"
+                        className="scene_2_image"
                     />
                 </div>
                 <div className="scene_2_image_container">
@@ -182,6 +113,7 @@ export default function Scene_2() {
                         src={painter}
                         alt="creation of adam painting"
                         id="scene_2_painter"
+                        className="scene_2_image"
                     />
                 </div>
                 <div className="scene_2_image_container">
@@ -189,6 +121,7 @@ export default function Scene_2() {
                         src={can}
                         alt="creation of adam painting"
                         id="scene_2_can"
+                        className="scene_2_image"
                     />
                 </div>
                 <div className="scene_2_image_container">
@@ -196,6 +129,7 @@ export default function Scene_2() {
                         src={myself}
                         alt="creation of adam painting"
                         id="scene_2_myself"
+                        className="scene_2_image"
                     />
                 </div>
             </div>
